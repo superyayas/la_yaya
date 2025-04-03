@@ -1,0 +1,19 @@
+# Ignorar carpetas de logs y caché
+writable/
+vendor/
+build/
+
+# Ignorar entorno local
+.env
+
+# Ignorar archivos de PHPUnit cache
+.phpunit.result.cache
+
+# Ignorar dependencias
+/vendor/
+
+# Ignorar archivos temporales
+*.swp
+*.tmp
+*.bak
+
