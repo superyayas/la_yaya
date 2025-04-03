@@ -231,7 +231,7 @@ abstract class CIUnitTestCase extends TestCase
     {
         parent::setUpBeforeClass();
 
-        helper(['url', 'test']);
+       // helper(['url', 'test']);
     }
 
     protected function setUp(): void

@@ -1,34 +1,70 @@
-<?php
+#--------------------------------------------------------------------
+# Example Environment Configuration file
+#
+# This file can be used as a starting point for your own
+# custom .env files, and contains most of the possible settings
+# available in a default install.
+#
+# By default, all of the settings are commented out. If you want
+# to override the setting, you must un-comment it by removing the '#'
+# at the beginning of the line.
+#--------------------------------------------------------------------
 
-/*
- |--------------------------------------------------------------------------
- | ERROR DISPLAY
- |--------------------------------------------------------------------------
- | In development, we want to show as many errors as possible to help
- | make sure they don't make it to production. And save us hours of
- | painful debugging.
- |
- | If you set 'display_errors' to '1', CI4's detailed error report will show.
- */
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+#--------------------------------------------------------------------
+# ENVIRONMENT
+#--------------------------------------------------------------------
 
-/*
- |--------------------------------------------------------------------------
- | DEBUG BACKTRACES
- |--------------------------------------------------------------------------
- | If true, this constant will tell the error screens to display debug
- | backtraces along with the other error information. If you would
- | prefer to not see this, set this value to false.
- */
-defined('SHOW_DEBUG_BACKTRACE') || define('SHOW_DEBUG_BACKTRACE', true);
+ CI_ENVIRONMENT = testing
 
-/*
- |--------------------------------------------------------------------------
- | DEBUG MODE
- |--------------------------------------------------------------------------
- | Debug mode is an experimental flag that can allow changes throughout
- | the system. This will control whether Kint is loaded, and a few other
- | items. It can always be used within your own application too.
- */
-defined('CI_DEBUG') || define('CI_DEBUG', true);
+#--------------------------------------------------------------------
+# APP
+#--------------------------------------------------------------------
+
+# app.baseURL = ''
+# If you have trouble with `.`, you could also use `_`.
+# app_baseURL = ''
+# app.forceGlobalSecureRequests = false
+# app.CSPEnabled = false
+
+#--------------------------------------------------------------------
+# DATABASE
+#--------------------------------------------------------------------
+
+ database.default.hostname = localhost
+ database.default.database = la_yaya
+ database.default.username = root
+ database.default.password = 
+ database.default.DBDriver = MySQLi
+ database.default.DBPrefix =
+ database.default.port = 3306
+
+# If you use MySQLi as tests, first update the values of Config\Database::$tests.
+ database.tests.hostname = localhost
+ database.tests.database = la_yaya
+ database.tests.username = root
+ database.tests.password = 
+ database.tests.DBDriver = MySQLi
+ database.tests.DBPrefix =
+ database.tests.charset = utf8mb4
+ database.tests.DBCollat = utf8mb4_general_ci
+ database.tests.port = 3306
+
+#--------------------------------------------------------------------
+# ENCRYPTION
+#--------------------------------------------------------------------
+
+# encryption.key =
+
+#--------------------------------------------------------------------
+# SESSION
+#--------------------------------------------------------------------
+
+# session.driver = 'CodeIgniter\Session\Handlers\FileHandler'
+# session.savePath = null
+
+#--------------------------------------------------------------------
+# LOGGER
+#--------------------------------------------------------------------
+
+# logger.threshold = 4
+

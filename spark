@@ -1,0 +1,38 @@
+#!/usr/bin/env php
+<?php
+
+use Config\Paths;
+use CodeIgniter\Boot;
+
+// Mostrar errores
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+// Verificar que se ejecuta desde CLI
+if (PHP_SAPI !== 'cli') {
+    exit("Este script debe ejecutarse desde la línea de comandos.\n");
+}
+
+// Definir rutas base
+define('HOMEPATH', __DIR__ . DIRECTORY_SEPARATOR);
+define('FCPATH', HOMEPATH . 'public' . DIRECTORY_SEPARATOR);
+define('COMPOSER_PATH', HOMEPATH . 'vendor/autoload.php');
+define('VENDORPATH', HOMEPATH . 'vendor' . DIRECTORY_SEPARATOR);
+
+// Cargar Paths
+require_once HOMEPATH . 'app/Config/Paths.php';
+
+$paths = new Paths();
+
+// Definir constantes necesarias ANTES de usar Boot
+define('APPPATH', realpath($paths->appDirectory) . DIRECTORY_SEPARATOR);
+define('SYSTEMPATH', realpath($paths->systemDirectory) . DIRECTORY_SEPARATOR);
+define('WRITEPATH', realpath($paths->writableDirectory) . DIRECTORY_SEPARATOR);
+define('TESTPATH', realpath($paths->testsDirectory) . DIRECTORY_SEPARATOR);
+define('SUPPORTPATH', realpath(TESTPATH . '_support/') . DIRECTORY_SEPARATOR);
+
+// Cargar el bootstrap de CodeIgniter
+require_once SYSTEMPATH . 'Boot.php';
+
+// Ejecutar Spark
+exit(Boot::bootSpark($paths));
