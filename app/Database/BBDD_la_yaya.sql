@@ -101,5 +101,3 @@ INSERT INTO ListaProductos (ID_Lista, ID_Producto, Cantidad) VALUES
 (2, 2, 3); -- 3 Pechugas de pollo en "Cena especial"
 
 
-
-
