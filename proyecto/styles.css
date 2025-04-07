@@ -114,3 +114,11 @@ a:hover {
     font-size: 24px;
     font-weight: bold;
 }
+.logout {
+    text-align: right;
+    margin-top: 20px;
+}
+.logout a {
+color: red;
+text-decoration: none;
+}
