@@ -15,13 +15,13 @@ return [$nombre,$apellidos,$usuario,$email,$contrasena,$contenido];
     }
 }
 function productos(){
-    if (isset($_POST['nombre_producto']) && isset($_POST['descripcion']) && isset($_POST['precio']) && isset($_POST['cantidad']) ){
-        $nombre = $_POST['nombre_producto'];
-        $apellidos = $_POST['descripcion'];
-        $telefono = $_POST['precio'];
-        $email = $_POST['cantidad'];
+    if (isset($_POST['nombreProducto']) && isset($_POST['descripcion']) && isset($_POST['precio']) && isset($_POST['cantidad']) ){
+        $nombreProducto = $_POST['nombreProducto'];
+        $descripcion = $_POST['descripcion'];
+        $id_categoria = $_POST['id_categoria'];
+        $marca = $_POST['marca'];
     $contenido = true;
-return [$nombre_producto,$descripcion,$precio,$cantidad,$contenido];
+return [$nombre_producto,$descripcion,$id_categoria,$marca,$contenido];
     }else{
         $contenido = false;
         return $contenido;
