@@ -49,7 +49,7 @@ class yayaBD{
     }
     //Metodo para la actualización de datos de los clientes
     public function actualizarCliente($id,$nombre,$apellidos,$telefono,$email,$contrasena){
-        $consulta = "UPDATE `usuarios` SET `Nombre` =?,`Apellidos` =?,'Usuario` =?, 'CorreoElectronico` =?,`contrasena` =? WHERE `id` =?";
+        $consulta = "UPDATE `usuario` SET `Nombre` =?,`Apellidos` =?,'Usuario` =?, 'CorreoElectronico` =?,`contrasena` =? WHERE `id` =?";
         $actualizar = yayaBD::consultaInsercionBD($consulta,$nombre,$apellidos,$usuario,$email,$contrasena,$id);
         return $actualizar;
     }

@@ -1,4 +1,18 @@
 <?php
+require_once __DIR__. '/../controlador/libreriaController.php';
+
+// Creamos una varible que llamaremos controlador para obtener los métodos de la carpeta "controlador"
+$controlador = new libreriaController();
+
+if(isset($_GET['titulo'])){
+    $controlador->mostarLibro($_GET['titulo']);
+}
+else
+{
+    $controlador->listadoLibros();
+}
+?>
+<!-- <?php
 session_start();
 if (!isset($_SESSION['usuario'])) {
     header("Location: accesoUser.php"); // Redirige si no hay sesión iniciada
@@ -47,4 +61,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Añadir Producto">
     </form>
 </body>
-</html>
+</html> -->

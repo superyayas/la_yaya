@@ -4,11 +4,11 @@
 require_once "../modelo/bdd/mysql.php";
 if (isset($_POST['usuario']) && isset($_POST['contrasena'])){
 	$user = $_POST['usuario'];
-	$consulta = "SELECT * FROM `usuarios` WHERE `Usuario` = '$user'";
+	$consulta = "SELECT * FROM `usuario` WHERE `Usuario` = '$user'";
 	$resultado = yayaBD::consultaLectura($consulta);
 	if($resultado != null){
 		$contrasena = hash('sha256',$_POST['contrasena']);
-		if(($resultado[0]['usuario']== $user)&&($resultado[0]['contrasena']== $contrasena)){
+		if(($resultado[0]['Usuario']== $user)&&($resultado[0]['contrasena']== $contrasena)){
 			$_SESSION['usuario']="$user";
 			$_SESSION['tiempo']=time();
 		
