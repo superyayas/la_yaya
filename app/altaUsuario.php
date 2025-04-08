@@ -11,6 +11,7 @@
 
     include_once "includes/funciones.php";
     include_once "Models/bddModel.php";
+    
     // Llamamos al método que contiene los datos del usuario
     list($nombre,$apellidos,$telefono,$email,$contrasena,$contenido) = parametros();
     if($contenido) :
